@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Developer\'s CompanionApp</string>
+    <string name="email_hint">Email</string>
+    <string name="or">OR</string>
+    <string name="emailbtn_text">Log in</string>
+    <string name="facebook_app_id">166640207351880</string>
+    <string name="fb_login_protocol_scheme">fb166640207351880</string>
+    <string name="login_text">Log in to manage your project</string>
+    <string name="register_text">Join the club now!</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="my_project">My Project</string>
+    <string name="logout">Log out</string>
+    <string name="category_header">Choose Development Type</string>
+    <string name="temp">Loading</string>
+    <string name="framework">Framework</string>
+    <string name="library">Library</string>
+    <string name="tool">Tool</string>
+    <string name="back">Go Back</string>
+    <string name="description">Description</string>
+    <string name="not_logged_in">Please Log in first</string>
+    <string name="home">Home</string>
+    <string name="add_project">Add Project</string>
+    <string name="ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam non est id justo vulputate vulputate.
+        Suspendisse in tellus vitae elit aliquam dictum sed eget dolor.
+        Nulla facilisi. Phasellus elementum commodo massa.
+        Curabitur mattis nibh ut urna consequat fringilla.
+        Aenean convallis enim et fringilla mollis. Nulla feugiat et turpis at tincidunt.</string>
+</resources>
