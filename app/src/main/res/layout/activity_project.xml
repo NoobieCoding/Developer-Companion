@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProjectActivity">
+
+        <corp.tuter.developerscompanionapp.CustomView.MyProjectUserBarView
+            android:id="@+id/user_bar_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></corp.tuter.developerscompanionapp.CustomView.MyProjectUserBarView>
+
+        <TextView
+            android:id="@+id/project_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/temp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginEnd="63dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_bar_view"
+            app:srcCompat="@mipmap/project_ic" />
+
+        <ImageButton
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:selectableItemBackground"
+            android:onClick="deleteProject"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/user_bar_view"
+            app:srcCompat="@android:drawable/ic_delete" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/delete_project"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/delete_button" />
+
+        <TextView
+            android:id="@+id/framework_project_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="257dp"
+            android:text="@string/framework"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/project_framework"
+            app:layout_constraintEnd_toStartOf="@+id/add_framework"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_bar_view" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/project_framework"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_framework_text" />
+
+        <ImageButton
+            android:id="@+id/add_framework"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="213dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="105dp"
+            android:background="?android:selectableItemBackground"
+            android:onClick="addFramework"
+            android:scaleType="centerInside"
+            android:src="@mipmap/plus_button_ic"
+            app:layout_constraintBottom_toTopOf="@+id/add_framework_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/framework_project_header"
+            app:layout_constraintTop_toBottomOf="@+id/project_name_header" />
+
+        <TextView
+            android:id="@+id/add_framework_text"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toEndOf="@+id/framework_project_header"
+            app:layout_constraintTop_toBottomOf="@+id/add_framework" />
+
+        <TextView
+            android:id="@+id/library_project_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="23dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/library"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/project_library"
+            app:layout_constraintEnd_toStartOf="@+id/add_library"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_framework"
+            app:layout_constraintVertical_bias="0.53" />
+
+        <ImageButton
+            android:onClick="addLibrary"
+            android:id="@+id/add_library"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@mipmap/plus_button_ic"
+            app:layout_constraintStart_toEndOf="@+id/library_project_header"
+            app:layout_constraintTop_toBottomOf="@+id/project_framework" />
+
+        <TextView
+            android:id="@+id/add_library_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="19dp"
+            android:layout_marginEnd="243dp"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/project_library"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_library" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/project_library"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/library_project_header" />
+
+        <TextView
+            android:id="@+id/tool_project_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/tool"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/add_tool"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_library" />
+
+        <ImageButton
+            android:onClick="addTool"
+            android:id="@+id/add_tool"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="256dp"
+            android:layout_marginTop="35dp"
+            android:background="?android:selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@mipmap/plus_button_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/project_library" />
+
+        <TextView
+            android:id="@+id/add_tool_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="264dp"
+            android:layout_marginStart="126dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/add"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_tool" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/project_tool"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tool_project_header" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

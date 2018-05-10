@@ -22,6 +22,17 @@
     <string name="not_logged_in">Please Log in first</string>
     <string name="home">Home</string>
     <string name="add_project">Add Project</string>
+    <string name="project_name">Name of the project</string>
+    <string name="project_description">Description of the project</string>
+    <string name="project_name_hint">Insert project\'s name here</string>
+    <string name="project_description_hint">Insert project\'s description here</string>
+    <string name="create">Create Project</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="delete_project">Delete Project</string>
+    <string name="add_framework">Add Framework</string>
+    <string name="add_library">Add Library</string>
+    <string name="add_tool">Add Tool</string>
+    <string name="add">Add</string>
     <string name="ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Nullam non est id justo vulputate vulputate.
         Suspendisse in tellus vitae elit aliquam dictum sed eget dolor.

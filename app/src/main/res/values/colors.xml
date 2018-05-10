@@ -6,4 +6,5 @@
     <color name="loginDark">#47525E</color>
     <color name="white">#FFFFFF</color>
     <color name="myGreen">#13CE66</color>
+    <color name="red">#FF0000</color>
 </resources>

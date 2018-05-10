@@ -2,43 +2,32 @@ package corp.tuter.developerscompanionapp.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import corp.tuter.developerscompanionapp.DescriptionActivity;
-import corp.tuter.developerscompanionapp.Interactor.StorageManager;
-import corp.tuter.developerscompanionapp.Level1Activity;
-import corp.tuter.developerscompanionapp.Model.Library;
-import corp.tuter.developerscompanionapp.Model.Node;
-import corp.tuter.developerscompanionapp.Model.Tool;
+import corp.tuter.developerscompanionapp.ProjectActivity;
+import corp.tuter.developerscompanionapp.Model.Project;
 import corp.tuter.developerscompanionapp.R;
 
-public class ImageCustomAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class ProjectAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-    private List<Node> items;
-    private StorageManager mStorageManager;
+    private List<Project> items;
     private Context context;
 
-    public ImageCustomAdaptor(List<Node> items, Context context) {
+    public ProjectAdaptor(List<Project> items, Context context) {
         this.items = items;
-        mStorageManager = StorageManager.getInstance();
         this.context = context;
     }
 
-    public ImageCustomAdaptor(List<Node> items) {
+    public ProjectAdaptor(List<Project> items) {
         this.items = items;
-        mStorageManager = StorageManager.getInstance();
     }
 
 
@@ -56,24 +45,18 @@ public class ImageCustomAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         MyViewHolder viewholder = (MyViewHolder) holder;
         TextView name = viewholder.name;
-        Log.d("Name", items.get(position).getName() + "AAAa");
         name.setText(items.get(position).getName());
 
         ImageButton pic =  viewholder.pic;
+        pic.setImageResource(R.mipmap.project_ic);
         pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                if (items.get(position) instanceof Library || items.get(position) instanceof Tool) {
-                    intent = new Intent(v.getContext(), DescriptionActivity.class);
-                } else {
-                    intent = new Intent(v.getContext(), Level1Activity.class);
-                }
-                intent.putExtra("parent", items.get(position));
+                Intent intent = new Intent(v.getContext(), ProjectActivity.class);
+                intent.putExtra("project", items.get(position));
                 v.getContext().startActivity(intent);
             }
         });
-        mStorageManager.assignPictureFromStorage(context,pic, items.get(position).getImageName());
     }
 
 

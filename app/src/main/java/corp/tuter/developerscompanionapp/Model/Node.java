@@ -5,6 +5,9 @@ import java.io.Serializable;
 public class Node implements Serializable{
     private String name, imageName, description, path;
 
+    public Node() {
+    }
+
     public Node(String name, String imageName, String description, String path) {
         this.name = name;
         this.imageName = imageName;

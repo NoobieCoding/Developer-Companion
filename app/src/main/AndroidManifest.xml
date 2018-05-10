@@ -55,7 +55,9 @@
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MyProjectMainActivity"></activity>
+        <activity android:name=".MyProjectMainActivity" />
+        <activity android:name=".ProjectActivity" />
+        <activity android:name=".SuggestionActivity"></activity>
     </application>
 
 </manifest>
